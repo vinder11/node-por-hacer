@@ -31,8 +31,17 @@ const crear = (descripcion) => {
     return porHacer;
 }
 
-const getListado = () => {
+const getListado = (completado) => {
     cargarDB();
+
+    let boolValue = JSON.parse(completado); //returns true
+
+    if (completado !== undefined) {
+        let nuevoListado = listadoPorhacer.filter(tarea => {
+            return tarea.completado == boolValue
+        });
+        listadoPorhacer = nuevoListado;
+    }
     return listadoPorhacer;
 }
 

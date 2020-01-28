@@ -6,7 +6,7 @@ const descripcion = {
 
 const completado = {
     alias: 'c',
-    default: true,
+    //default: true,
     desc: 'Marca como completado o pendiente la tarea'
 }
 
@@ -20,6 +20,9 @@ const argv = require('yargs')
     })
     .command('borrar', 'Borrar la tarea', {
         descripcion
+    })
+    .command('listar', 'Lista las tareas', {
+        completado
     })
     .help()
     .argv;
